@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: campusconnect
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NEXTAUTH_URL
+        value: https://campusconnect.onrender.com
+      - key: NEXTAUTH_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        value: file:./prisma/dev.db
+    disks:
+      - name: prisma-data
+        mountPath: /opt/render/project/src/prisma
+        sizeGB: 1

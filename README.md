@@ -12,16 +12,16 @@ A complete full-stack learning management system built with Next.js, featuring c
 - **Real-time Chat** - Message other students with instant delivery
 - **Notifications** - In-app notifications for enrollment, grades, and announcements
 - **User Profile** - Manage personal information and settings
-- **Course Reviews** - Rate and review completed courses (1-5 stars)
+ **Course Reviews** - Rate and review completed courses (1-5 stars)
 
-### 👑 Admin Features
-- **Admin Dashboard** - Overview with stats cards
-- **User Management** - View all users, change roles (Student/Admin), delete users
-- **Course Management** - Add new courses, view all courses, delete courses
-- **Assignment Grading** - Grade submissions, add feedback, view graded work
-- **Broadcast Messages** - Send announcements to ALL students instantly
+###  Admin Features
+**Admin Dashboard** - Overview with stats cards
+ **User Management** - View all users, change roles (Student/Admin), delete users
+**Course Management** - Add new courses, view all courses, delete courses
+ **Assignment Grading** - Grade submissions, add feedback, view graded work
+**Broadcast Messages** - Send announcements to ALL students instantly
 
-### 💬 Chat System
+###  Chat System
 - Real-time messaging with Socket.io
 - Online/offline status indicators
 - Private 1-on-1 conversations

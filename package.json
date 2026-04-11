@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "socket-server": "node server.js",
-    "dev:all": "concurrently \"npm run dev\" \"npm run socket-server\""
+    "dev:all": "concurrently \"npm run dev\" \"npm run socket-server\"",
+    "postinstall": "prisma generate && prisma db push"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.js"
