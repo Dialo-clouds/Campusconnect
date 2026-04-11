@@ -41,6 +41,30 @@ A complete full-stack learning management system built with Next.js, featuring c
 | **Icons** | Lucide React |
 | **Animations** | Framer Motion |
 
+## 🚀 Deployment & Troubleshooting
+
+### Live URL
+https://campusconnect.onrender.com
+
+### Deployment Platform
+- **Platform:** Render.com
+- **Database:** PostgreSQL (Render Free Tier)
+- **Web Service:** Node.js + Next.js
+
+### Known Issues & Solutions
+
+#### Issue 1: Database Connection on Free Tier
+**Problem:** Render's free tier doesn't allow Shell access for running database migrations.
+
+**Solution:** Run migrations locally using the external connection string:
+```bash
+# Set DATABASE_URL to Render PostgreSQL external URL
+DATABASE_URL=postgresql://user:pass@host:5432/db?sslmode=require
+
+# Push schema and seed data
+npx prisma db push
+npx prisma db seed
+
 ## 🚀 Quick Start
 
 ### Prerequisites
