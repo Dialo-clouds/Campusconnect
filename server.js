@@ -6,6 +6,9 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+// Get allowed origin from environment variable
+const allowedOrigin = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+
 app.prepare().then(() => {
   const server = createServer((req, res) => {
     handle(req, res);
@@ -13,8 +16,9 @@ app.prepare().then(() => {
   
   const io = new Server(server, {
     cors: {
-      origin: "http://localhost:3000",
-      methods: ["GET", "POST"]
+      origin: allowedOrigin,
+      methods: ["GET", "POST"],
+      credentials: true
     }
   });
 
@@ -77,8 +81,9 @@ app.prepare().then(() => {
     });
   });
 
-  const PORT = 3001;
+  const PORT = process.env.SOCKET_PORT || 3001;
   server.listen(PORT, () => {
     console.log(`Socket.io server running on port ${PORT}`);
+    console.log(`CORS origin allowed: ${allowedOrigin}`);
   });
 });
